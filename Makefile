@@ -1,29 +1,32 @@
-INCLUDE_DIRS = 
-LIB_DIRS = 
+INCLUDE_DIRS =
+LIB_DIRS =
 CC=gcc
 
-CDEFS= 
-CFLAGS= -O3 -g $(INCLUDE_DIRS) $(CDEFS)
-LIBS= -lpthread -lrt
+CDEFS=
 
-PRODUCT=posix_clock
+# -O2        : better bthan O0 timing  wise 
+# -pthread   : correct compile and linking thread flags
+CFLAGS= -O2 -g -Wall -Wextra -pthread $(INCLUDE_DIRS) $(CDEFS)
+
+
+LIBS= -lrt
 
 HFILES=
-CFILES= posix_clock.c
+CFILES= lab1.c
 
 SRCS= ${HFILES} ${CFILES}
 OBJS= ${CFILES:.c=.o}
 
-all:	${PRODUCT}
+all: lab1
 
 clean:
-	-rm -f *.o *.NEW *~ *.d
-	-rm -f ${PRODUCT} ${GARBAGE}
+	-rm -f *.o *.d
+	-rm -f lab1
 
-posix_clock:	posix_clock.o
-	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ posix_clock.o $(LIBS)
+lab1: lab1.o
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
 
 depend:
 
 .c.o:
-	$(CC) -MD $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<

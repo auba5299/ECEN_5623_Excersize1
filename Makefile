@@ -1,30 +1,30 @@
 INCLUDE_DIRS =
 LIB_DIRS =
-CC=gcc
+CC = gcc
 
-CDEFS=
+CDEFS =
+CFLAGS = -O3 $(INCLUDE_DIRS) $(CDEFS)
+LIBS =
 
-# -O2        : better bthan O0 timing  wise 
-# -pthread   : correct compile and linking thread flags
-CFLAGS= -O2 -g -Wall -Wextra -pthread $(INCLUDE_DIRS) $(CDEFS)
+HFILES = $(wildcard *.h)
+CFILES = $(wildcard *.c)
 
+EXES = $(CFILES:.c=)
 
-LIBS= -lrt
-
-HFILES=
-CFILES= lab1.c
-
-SRCS= ${HFILES} ${CFILES}
-OBJS= ${CFILES:.c=.o}
-
-all: lab1
+all: $(EXES)
 
 clean:
 	-rm -f *.o *.d
-	-rm -f lab1
+	-rm -f $(EXES)
 
-lab1: lab1.o
-	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
+distclean:
+	-rm -f *.o *.d
+	-rm -f $(EXES)
+
+# Force .c → .o before linking
+%: %.c
+	$(CC) $(CFLAGS) -c $< -o $@.o
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o -lpthread
 
 depend:
 

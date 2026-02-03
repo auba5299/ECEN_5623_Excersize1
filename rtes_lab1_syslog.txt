@@ -1,0 +1,48 @@
+-- Logs begin at Fri 2021-12-10 04:15:49 EST, end at Fri 2021-12-10 04:39:11 EST. --
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: Calibration: target=10.000 ms, avg=0.009000 ms per 100 test cycles, required=1111
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: Calibration: target=20.000 ms, avg=0.008765 ms per 100 test cycles, required=2281
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: CI frame=1 t=0.003
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 start r=1 t=0.118 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 done  r=1 t=9.677 cpu=3 loops=1111
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F20 start r=1 t=9.725 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 start r=2 t=20.027 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 done  r=2 t=29.598 cpu=3 loops=1111
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F20 done  r=1 t=38.998 cpu=3 loops=2281
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 start r=3 t=40.040 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 done  r=3 t=49.653 cpu=3 loops=1111
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F20 start r=2 t=50.034 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 start r=4 t=60.029 cpu=3
+Dec 10 04:17:40 nimisha-desktop rtes_lab1[7934]: F10 done  r=4 t=69.535 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 done  r=2 t=79.118 cpu=3 loops=2281
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=5 t=80.043 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=5 t=89.606 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: CI frame=2 t=100.079
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=6 t=100.156 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=6 t=109.761 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 start r=3 t=109.824 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=7 t=120.028 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=7 t=129.649 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 done  r=3 t=139.128 cpu=3 loops=2281
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=8 t=140.037 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=8 t=149.629 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 start r=4 t=150.033 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=9 t=160.028 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=9 t=169.599 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 done  r=4 t=179.308 cpu=3 loops=2281
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=10 t=180.030 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=10 t=189.622 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: CI frame=3 t=200.080
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=11 t=200.157 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=11 t=209.618 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 start r=5 t=209.670 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=12 t=220.023 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=12 t=229.577 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 done  r=5 t=238.866 cpu=3 loops=2281
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=13 t=240.031 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=13 t=249.616 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 start r=6 t=250.027 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=14 t=260.022 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=14 t=269.577 cpu=3 loops=1111
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F20 done  r=6 t=279.273 cpu=3 loops=2281
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 start r=15 t=280.029 cpu=3
+Dec 10 04:17:41 nimisha-desktop rtes_lab1[7934]: F10 done  r=15 t=289.607 cpu=3 loops=1111

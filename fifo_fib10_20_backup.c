@@ -32,12 +32,14 @@ sem_t semF10, semF20;
 #define FIB_LIMIT_FOR_32_BIT (47)
 #define FIB_LIMIT (10)
 
-#define FIB10_TEST_CYCLES (39000) // found experimentally
-#define FIB20_TEST_CYCLES (78000) // found experimentally
+#define FIB10_TEST_CYCLES (106783) // found experimentally
+#define FIB20_TEST_CYCLES (210545) // found experimentally
+
+
 int abortTest = 0;
 double start_time;
 
-unsigned int seqIterations = FIB_LIMIT;
+unsigned int seqIterations = FIB_LIMIT_FOR_32_BIT;
 unsigned int idx = 0, jdx = 1;
 unsigned int fib = 0, fib0 = 0, fib1 = 1;
 
@@ -181,18 +183,13 @@ void *Sequencer(void *threadp)
   // Sequencing loop for LCM phasing of S1, S2
   do
   {
-
     // Basic sequence of releases after CI for 90% load
     //
     // S1: T1= 20, C1=10 msec
     // S2: T2= 50, C2=20 msec
     //
-    // This is equivalent to a Cyclic Executive Loop where the major cycle is
-    // 100 milliseconds with a minor cycle of 20 milliseconds, but here we use
-    // pre-emption rather than a fixed schedule.
-    //
     // usleep was swapped for clock_nanosleep for better accuracy and use of CLOCK_MONOTONIC
-
+    //  
     // Simulate the C.I. for S1 and S2 and timestamp in log
     
     sem_post(&semF10);
@@ -224,6 +221,8 @@ void *Sequencer(void *threadp)
   } while (MajorPeriodCnt < threadParams->MajorPeriods);
 
   abortTest = 1;
+  syslog(LOG_INFO, "!! abortTest = 1, ignore final sequence which follows!!");
+
   sem_post(&semF10);
   sem_post(&semF20);
 }
@@ -332,7 +331,7 @@ void main(void)
 
   // Create Sequencer thread, which like a cyclic executive, is highest prio
   printf("Start sequencer\n");
-  threadParams[0].MajorPeriods = 1;
+  threadParams[0].MajorPeriods = 3;
 
   rc = pthread_create(&threads[0],       // pointer to thread descriptor
                       &rt_sched_attr[0], // use specific attributes
